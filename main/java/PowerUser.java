@@ -18,6 +18,7 @@ public class PowerUser extends User implements Writable {
         System.out.println("Select an option: 1. Read users file    2. Add user details");
         Scanner scanner = new Scanner(System.in);
         int choice = scanner.nextInt();
+        scanner.nextLine();
 
         switch (choice) {
             case 1:

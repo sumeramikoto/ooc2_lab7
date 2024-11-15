@@ -31,6 +31,7 @@ public class AdminUser extends User implements Writable, Modifiable, Renamable {
         System.out.println("Select an option: 1. Read users file    2. Add user details    3. Update user information    4. Update user privilege");
         Scanner scanner = new Scanner(System.in);
         int choice = scanner.nextInt();
+        scanner.nextLine();
 
         switch (choice) {
             case 1:
@@ -75,7 +76,7 @@ public class AdminUser extends User implements Writable, Modifiable, Renamable {
                 if (parts.length == 5) {
                     if (parts[0].equals(userId)) {
                         parts[1] = updatedUsername;
-                        String updatedData = parts[0] + "," + parts[1] + "," + parts[2] + "," + parts[3] + "," + parts[4] + "," + '\n';
+                        String updatedData = parts[0] + "," + parts[1] + "," + parts[2] + "," + parts[3] + "," + parts[4] + '\n';
                         writer.write(updatedData);
                         continue;
                     }
@@ -102,7 +103,7 @@ public class AdminUser extends User implements Writable, Modifiable, Renamable {
                 if (parts.length == 5) {
                     if (parts[0].equals(userId)) {
                         parts[4] = updatedPrivilege;
-                        String updatedData = parts[0] + "," + parts[1] + "," + parts[2] + "," + parts[3] + "," + parts[4] + "," + '\n';
+                        String updatedData = parts[0] + "," + parts[1] + "," + parts[2] + "," + parts[3] + "," + parts[4] + '\n';
                         writer.write(updatedData);
                         continue;
                     }
