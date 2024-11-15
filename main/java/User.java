@@ -22,4 +22,6 @@ abstract class User implements Readable {
     public void readData(String filePath) throws IOException {
         FileUtility.readFile(filePath);
     }
+
+    abstract public void performAction();
 }
