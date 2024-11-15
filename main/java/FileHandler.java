@@ -3,7 +3,7 @@ import java.util.HashMap;
 
 public class FileHandler {
     private static FileHandler instance;
-    
+
     private final HashMap<String, User> allUserMap = new HashMap<>();
     private final HashMap<String, User> regularUserMap = new HashMap<>();
     private final HashMap<String, User> powerUserMap = new HashMap<>();
