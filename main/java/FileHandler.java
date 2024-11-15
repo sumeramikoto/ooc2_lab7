@@ -61,6 +61,14 @@ public class FileHandler {
         }
     }
 
+    public boolean isRegularUser(String username) {
+        return regularUserMap.containsKey(username);
+    }
+
+    public boolean isPowerUser(String username) {
+        return regularUserMap.containsKey(username);
+    }
+
     public boolean isAdmin(String username) {
         return adminMap.containsKey(username);
     }
