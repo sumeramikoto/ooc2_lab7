@@ -6,13 +6,9 @@ public class RegularUser extends User {
     }
 
     @Override
-    public void performAction() {
+    public void performAction() throws IOException {
         System.out.println(this.getUsername() + " is a regular user.");
         System.out.println("Reading the users file...\n");
-        try {
-            FileUtility.readFile("Users.csv");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        FileUtility.readFile("Users.csv");
     }
 }
