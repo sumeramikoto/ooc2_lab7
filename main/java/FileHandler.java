@@ -3,8 +3,7 @@ import java.util.HashMap;
 
 public class FileHandler {
     private static FileHandler instance;
-
-    // Store regular and admin users separately
+    
     private final HashMap<String, User> allUserMap = new HashMap<>();
     private final HashMap<String, User> regularUserMap = new HashMap<>();
     private final HashMap<String, User> powerUserMap = new HashMap<>();
@@ -19,7 +18,6 @@ public class FileHandler {
         return instance;
     }
 
-    // Load regular users from User.csv
     public void loadData() throws IOException {
         BufferedReader userReader = new BufferedReader(new FileReader("Users.csv"));
         String line;
@@ -45,7 +43,6 @@ public class FileHandler {
         }
         userReader.close();
 
-        // Load admin data from Admin.csv
         BufferedReader adminReader = new BufferedReader(new FileReader("Admin.csv"));
         while ((line = adminReader.readLine()) != null) {
             String[] details = line.split(",");
@@ -55,7 +52,6 @@ public class FileHandler {
         adminReader.close();
     }
 
-    // Authenticate user by username and password
     public User authenticate(String username, String password) {
         User user = allUserMap.get(username);
         if (user != null && user.getPassword().equals(password)) {
@@ -65,7 +61,6 @@ public class FileHandler {
         }
     }
 
-    // Verify if a user is an admin
     public boolean isAdmin(String username) {
         return adminMap.containsKey(username);
     }
